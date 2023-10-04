@@ -1,0 +1,108 @@
+.header {
+  position: fixed;
+  height: 90px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: 0.3 ease-in;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: auto;
+  height: 100%;
+  padding: 0, 1rem;
+}
+
+.header .logo {
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  height: auto;
+}
+
+.header .nav-menu {
+  display: flex;
+}
+
+.header .nav-item {
+  padding: 1rem;
+  font-weight: 500;
+}
+.header .nav-item a {
+  text-transform: capitalize;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.header .nav-item a:hover {
+  padding-left: 1.5rem;
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+.hamburger {
+  font-size: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+  display: none;
+}
+.hamburger:hover {
+  color: var(--primary-700);
+  transform: rotate(90deg);
+}
+
+@media screen and (max-width: 940px) {
+  .header {
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .hamburger {
+    display: block;
+    color: #fff;
+  }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 80px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 90vh;
+    z-index: 999;
+    transition: var(--transition);
+    text-align: center;
+  }
+  .nav-menu.active {
+    left: 0;
+  }
+  .nav-item {
+    margin: 1.5rem 0;
+  }
+  .header .nav-menu a {
+    color: #fff;
+  }
+  .header .navbar .logo {
+    width: 250px;
+    height: auto;
+  }
+  .header .nav-menu {
+    display: flex;
+  }
+  .header .nav-item {
+    padding: 1rem;
+    font-weight: 500;
+  }
+  .header .nav-item a:hover {
+  }
+}
